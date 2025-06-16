@@ -91,7 +91,7 @@ function Home() {
 
         <div className="container px-3 px-md-5 mt-4">
           <p className="text-muted fs-5 mb-1">
-            Call me <strong>Pea</strong>
+            Called me <strong>Pea</strong>
           </p>
           <p className="text-muted fs-6" style={{ lineHeight: 1.8 }}>
             I graduated from{" "}
