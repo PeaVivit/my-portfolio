@@ -28,6 +28,8 @@ import DBeaver from "../assets/DBeaver.png";
 import UiPath from "../assets/uipath.svg";
 import MongoDB from "../assets/mongodb.svg";
 import swagger from "../assets/swagger.svg";
+import gitHub from "../assets/github.svg";
+import vercel from "../assets/vercel.svg";
 
 const SkillIcon = ({ src, alt, title }) => (
   <img
@@ -61,6 +63,8 @@ function Home() {
     { src: swagger, alt: "swagger", title: "swagger" },
     { src: MongoDB, alt: "MongoDB", title: "MongoDB" },
     { src: DBeaver, alt: "DBeaver", title: "DBeaver" },
+    { src: gitHub, alt: "gitHub", title: "gitHub" },
+    { src: vercel, alt: "vercel", title: "vercel" },
     { src: UiPath, alt: "UiPath", title: "UiPath" },
     { src: jira, alt: "jira", title: "Jira" },
     { src: atlassian, alt: "atlassian", title: "Atlassian" },
