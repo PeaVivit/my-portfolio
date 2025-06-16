@@ -27,4 +27,43 @@ This portfolio is designed to highlight my skills, experience, and projects as I
 ---
 
 ## 📁 Folder Structure (Simplified)
+my-portfolio/
+├── public/
+│ └── index.html
+├── src/
+│ ├── assets/ # images, icons
+│ ├── components/ # reusable components
+│ ├── App.js
+│ ├── index.js
+│ └── ...
+├── package.json
+└── README.md
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **Bootstrap 5**
+- **AOS (Animate on Scroll)**
+- **Vercel** (for deployment)
+
+---
+
+## 📦 Getting Started
+
+To run this project locally:
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/my-portfolio.git
+
+# 2. Go into the project folder
+cd my-portfolio
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the local server
+npm start
 
