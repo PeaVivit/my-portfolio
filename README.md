@@ -3,7 +3,7 @@
 This is my personal developer portfolio built with **React**.  
 It showcases who I am, what I've built, and how to reach me.
 
-<!-- Live Site 👉 [https://your-vercel-link.vercel.app](https://your-vercel-link.vercel.app) -->
+Live Site 👉 [https://my-portfolio-gamma-two-32.vercel.app/]
 
 ## 🚀 Project Overview
 
