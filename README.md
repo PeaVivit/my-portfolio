@@ -19,28 +19,6 @@ This portfolio is designed to highlight my skills, experience, and projects as I
 - ✨ Smooth scroll & animations (AOS)
 
 ---
-
-## 📸 Preview
-
-![Portfolio Screenshot](./screenshot.png) <!-- Replace with actual image or delete -->
-
----
-
-## 📁 Folder Structure (Simplified)
-my-portfolio/
-├── public/
-│ └── index.html
-├── src/
-│ ├── assets/ # images, icons
-│ ├── components/ # reusable components
-│ ├── App.js
-│ ├── index.js
-│ └── ...
-├── package.json
-└── README.md
-
----
-
 ## 🛠️ Tech Stack
 
 - **React.js**
