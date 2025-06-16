@@ -55,41 +55,57 @@ function Experience() {
 
   // Centralized data for all experience entries
   const experiences = [
+    // {
+    //   company: "SCB TechX.co",
+    //   date: "QA Engineer (Manual) April 2025 - present",
+    //   location: "SCB Tower (Payment domain team)",
+    //   responsibilities: [
+    //     "Conducted API testing using Postman for microservices.",
+    //     "Tracked and managed defects in JIRA for bug resolution and status updates.",
+    //     "Utilized Kibana, MongoDB, and DBeaver for data monitoring, log analysis, and database validation.",
+    //   ],
+    //   collapseId: "collapseExperience1",
+    //   borderColorClass: "border-primary",
+    // },
+    // {
+    //   company: "Thailand Stock Exchange",
+    //   date: "Manual Tester April 2024 - March 2025",
+    //   location: "TDX/DRx Team (Thailand Digital Exchange)",
+    //   responsibilities: [
+    //     "Performed manual and API testing using Swagger for various functionalities.",
+    //     "Managed bug reporting and tracking through JIRA.",
+    //     "Accessed SSH, configured firewalls, and validated data using Docker.",
+    //     "Validated user roles and permissions within Keycloak and on the E-Service platform.",
+    //   ],
+    //   collapseId: "collapseExperience2",
+    //   borderColorClass: "border-warning",
+    // },
+    // {
+    //   company: "Berli Jucker Public Company Limited (BJC)",
+    //   date: "Manual Tester June 2023 - January 2024",
+    //   location: "BJC Tower",
+    //   responsibilities: [
+    //     "Conducted testing for TAPlan, SCO Self-scan, and FFTI systems.",
+    //     "Validated system flows and ensured compliance with regulatory standards.",
+    //   ],
+    //   collapseId: "collapseExperience3",
+    //   borderColorClass: "border-success",
+    // },
     {
-      company: "SCB TechX.co",
-      date: "QA Engineer (Manual) April 2025 - present",
-      location: "SCB Tower (Payment domain team)",
+      company: "Accenture.co",
+      date: "Western Union Project (April 2023 - Present)",
+      location: "Onsite at Krungthai Bank (KTB)",
       responsibilities: [
-        "Conducted API testing using Postman for microservices.",
-        "Tracked and managed defects in JIRA for bug resolution and status updates.",
-        "Utilized Kibana, MongoDB, and DBeaver for data monitoring, log analysis, and database validation.",
+        "Analyzed end-to-end business processes to align technical solutions with operational goals.",
+        "Developed sequence diagrams to illustrate system interactions for cross-team communication.",
+        "Interpreted high-level architecture diagrams to guide system integration design.",
+        "Applied 3-layer architecture principles (presentation, business logic, data access) for scalable system design.",
+        "Integrated Redis for caching and in-memory data storage to improve performance.",
+        "Gathered and defined technical requirements through collaboration with stakeholders.",
+        "Created detailed technical specifications for front-end, BFF layer, core logic, database, Redis, and legacy adaptors.",
       ],
-      collapseId: "collapseExperience1",
+      collapseId: "collapseExperience4",
       borderColorClass: "border-primary",
-    },
-    {
-      company: "Thailand Stock Exchange",
-      date: "Manual Tester April 2024 - March 2025",
-      location: "TDX/DRx Team (Thailand Digital Exchange)",
-      responsibilities: [
-        "Performed manual and API testing using Swagger for various functionalities.",
-        "Managed bug reporting and tracking through JIRA.",
-        "Accessed SSH, configured firewalls, and validated data using Docker.",
-        "Validated user roles and permissions within Keycloak and on the E-Service platform.",
-      ],
-      collapseId: "collapseExperience2",
-      borderColorClass: "border-warning",
-    },
-    {
-      company: "Berli Jucker Public Company Limited (BJC)",
-      date: "Manual Tester June 2023 - January 2024",
-      location: "BJC Tower",
-      responsibilities: [
-        "Conducted testing for TAPlan, SCO Self-scan, and FFTI systems.",
-        "Validated system flows and ensured compliance with regulatory standards.",
-      ],
-      collapseId: "collapseExperience3",
-      borderColorClass: "border-success",
     },
     {
       company: "INET Managed Services Co., Ltd.",
@@ -100,7 +116,7 @@ function Experience() {
         "Automated Transfer Order processes to improve efficiency.",
         "Created an RPA for Dealer Appointment Record management.",
       ],
-      collapseId: "collapseExperience4",
+      collapseId: "collapseExperience5",
       borderColorClass: "border-info",
     },
     {
@@ -113,7 +129,7 @@ function Experience() {
         "Performed bug resolution and system maintenance.",
         "Collaborated with cross-functional teams to deliver project requirements.",
       ],
-      collapseId: "collapseExperience5",
+      collapseId: "collapseExperience6",
       borderColorClass: "border-primary", // You can use different colors if desired
     },
   ];

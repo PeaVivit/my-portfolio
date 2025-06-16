@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import vivit from "../assets/Vivit.png";
@@ -8,7 +8,13 @@ import linkedin from "../assets/linkedin.svg";
 import { FaPhone, FaUser } from "react-icons/fa";
 import { BsHouseDoor } from "react-icons/bs";
 
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
 function Contact() {
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -73,15 +79,12 @@ function Contact() {
             </div>
 
             <div className="w-100 d-flex justify-content-center">
-              <a
-                href={CV}
-                download="Vivit_Leelahalamlert_CV.pdf"
+              <button
                 className="btn btn-primary mt-3"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setShowModal(true)}
               >
-                Download CV
-              </a>
+                Preview CV
+              </button>
             </div>
           </div>
         </div>
@@ -104,6 +107,61 @@ function Contact() {
           </a>
         </div>
       </div>
+
+      {/* PDF Modal */}
+      {showModal && (
+        <div
+          className="modal d-block"
+          tabIndex="-1"
+          role="dialog"
+          style={{
+            backgroundColor: "rgba(0,0,0,0.5)",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            zIndex: 1050,
+          }}
+        >
+          <div
+            className="modal-dialog modal-xl"
+            role="document"
+            style={{ maxWidth: "90%", margin: "auto", marginTop: "5vh" }}
+          >
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">CV Preview</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShowModal(false)}
+                ></button>
+              </div>
+              <div className="modal-body" style={{ height: "70vh" }}>
+                <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
+                  <Viewer fileUrl={CV} />
+                </Worker>
+              </div>
+              <div className="modal-footer">
+                <a
+                  href={CV}
+                  download="Vivit_Leelahalamlert_CV.pdf"
+                  className="btn btn-success"
+                >
+                  Download CV
+                </a>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
