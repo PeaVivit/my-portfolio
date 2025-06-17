@@ -93,7 +93,7 @@ function Experience() {
     // },
     {
       company: "Accenture.co",
-      date: "Western Union Project (April 2023 - Present)",
+      date: "Western Union Project (April 2023 - March 2023)",
       location: "Onsite at Krungthai Bank (KTB)",
       responsibilities: [
         "Analyzed end-to-end business processes to align technical solutions with operational goals.",
