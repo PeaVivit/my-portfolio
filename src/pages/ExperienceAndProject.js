@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import experienceUI from "../assets/Test.png";
+import ProjectUI from "../assets/ProjectUI.jpg";
 import { motion } from "framer-motion";
 
 // --- Reusable ExperienceCard Component ---
@@ -21,14 +22,14 @@ const ExperienceCard = ({
         </div>
         <div className="col-12 col-md-auto text-md-end">
           <a
-            className="btn btn-primary w-100 w-md-auto"
+            className="btn btn-outline-primary mt-2 w-100 w-md-auto"
             data-bs-toggle="collapse"
             href={`#${collapseId}`}
             role="button"
             aria-expanded="false"
             aria-controls={collapseId}
           >
-            More Information
+            🔍 More Information
           </a>
         </div>
       </div>
@@ -46,51 +47,42 @@ const ExperienceCard = ({
     </div>
   </div>
 );
-// --- End of Reusable ExperienceCard Component ---
 
+// --- Reusable ProjectCard Component ---
+const ProjectCard = ({ title, description, tech, demoUrl }) => (
+  <div className="card mb-3 border-secondary" data-aos="fade-up">
+    <div className="card-body">
+      <h4 className="card-title">{title}</h4>
+      <p className="card-text">{description}</p>
+      <div className="d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+        <p className="mb-2 mb-md-0 text-center ">
+          <strong>Tech Stack:</strong> {tech}
+        </p>
+        {demoUrl && (
+          <a
+            href={demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline-primary"
+          >
+            🔗 Live Demo
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
+
+
+
+// --- Main Component ---
 function Experience() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  // Centralized data for all experience entries
   const experiences = [
-    // {
-    //   company: "SCB TechX.co",
-    //   date: "QA Engineer (Manual) April 2025 - present",
-    //   location: "SCB Tower (Payment domain team)",
-    //   responsibilities: [
-    //     "Conducted API testing using Postman for microservices.",
-    //     "Tracked and managed defects in JIRA for bug resolution and status updates.",
-    //     "Utilized Kibana, MongoDB, and DBeaver for data monitoring, log analysis, and database validation.",
-    //   ],
-    //   collapseId: "collapseExperience1",
-    //   borderColorClass: "border-primary",
-    // },
-    // {
-    //   company: "Thailand Stock Exchange",
-    //   date: "Manual Tester April 2024 - March 2025",
-    //   location: "TDX/DRx Team (Thailand Digital Exchange)",
-    //   responsibilities: [
-    //     "Performed manual and API testing using Swagger for various functionalities.",
-    //     "Managed bug reporting and tracking through JIRA.",
-    //     "Accessed SSH, configured firewalls, and validated data using Docker.",
-    //     "Validated user roles and permissions within Keycloak and on the E-Service platform.",
-    //   ],
-    //   collapseId: "collapseExperience2",
-    //   borderColorClass: "border-warning",
-    // },
-    // {
-    //   company: "Berli Jucker Public Company Limited (BJC)",
-    //   date: "Manual Tester June 2023 - January 2024",
-    //   location: "BJC Tower",
-    //   responsibilities: [
-    //     "Conducted testing for TAPlan, SCO Self-scan, and FFTI systems.",
-    //     "Validated system flows and ensured compliance with regulatory standards.",
-    //   ],
-    //   collapseId: "collapseExperience3",
-    //   borderColorClass: "border-success",
-    // },
     {
       company: "Accenture.co",
       date: "Western Union Project (April 2023 - March 2023)",
@@ -130,16 +122,27 @@ function Experience() {
         "Collaborated with cross-functional teams to deliver project requirements.",
       ],
       collapseId: "collapseExperience6",
-      borderColorClass: "border-primary", // You can use different colors if desired
+      borderColorClass: "border-primary",
+    },
+  ];
+
+  const projects = [
+    {
+      title: "🌐 Country Explorer",
+      description:
+        "Explore countries with dynamic search, 3D flip cards, and dark mode.",
+      tech: "React, Tailwind CSS, Framer Motion, REST API",
+      demoUrl: "https://your-country-explorer.vercel.app",
     },
   ];
 
   return (
     <div className="container mt-4">
+      {/* ---------------- Experience Section ---------------- */}
       <motion.div
-        initial={{ opacity: 0, x: 100 }} // เริ่มโปร่งใสและอยู่ทางขวา
-        whileInView={{ opacity: 1, x: 0 }} // เมื่อ scroll มาเห็น ให้แสดงแบบ slide-in
-        viewport={{ once: true, amount: 0.3 }} // once = แสดงครั้งเดียว, amount = 30% ของ element ต้องโผล่ถึงจะเริ่ม
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
         {/* Header */}
@@ -160,13 +163,47 @@ function Experience() {
         {/* Dynamic Experience Cards */}
         {experiences.map((exp, index) => (
           <ExperienceCard
-            key={index} // Consider a more unique key if order can change
+            key={index}
             company={exp.company}
             date={exp.date}
             location={exp.location}
             responsibilities={exp.responsibilities}
             collapseId={exp.collapseId}
             borderColorClass={exp.borderColorClass}
+          />
+        ))}
+      </motion.div>
+
+      {/* ---------------- Projects Section ---------------- */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Header */}
+        <div className="row align-items-center mb-4 mt-5">
+          <div className="col-12 col-md-9 text-center text-md-start">
+            <h1 className="fw-bold">Projects</h1>
+          </div>
+          <div className="col-12 col-md-3 text-center mb-3 mb-md-0">
+            <img
+              src={ProjectUI}
+              alt="Projects"
+              className="img-fluid mt-3 rounded"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          </div>
+        </div>
+
+        {/* Dynamic Project Cards */}
+        {projects.map((proj, index) => (
+          <ProjectCard
+            key={index}
+            title={proj.title}
+            description={proj.description}
+            tech={proj.tech}
+            demoUrl={proj.demoUrl}
           />
         ))}
       </motion.div>

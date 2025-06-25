@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
-import Experience from './pages/Experience';
+import ExperienceAndProject from './pages/ExperienceAndProject';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
@@ -20,7 +20,7 @@ function App() {
         <div className="flex-grow-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/experience" element={<Experience />} />
+            <Route path="/experience" element={<ExperienceAndProject />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
