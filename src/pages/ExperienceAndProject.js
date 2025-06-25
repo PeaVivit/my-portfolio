@@ -132,7 +132,7 @@ function Experience() {
       description:
         "Explore countries with dynamic search, 3D flip cards, and dark mode.",
       tech: "React, Tailwind CSS, Framer Motion, REST API",
-      demoUrl: "https://your-country-explorer.vercel.app",
+      demoUrl:"https://country-app-nu-blond.vercel.app/",
     },
   ];
 
