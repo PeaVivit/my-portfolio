@@ -72,10 +72,6 @@ const ProjectCard = ({ title, description, tech, demoUrl }) => (
     </div>
   </div>
 );
-
-
-
-
 // --- Main Component ---
 function Experience() {
   useEffect(() => {

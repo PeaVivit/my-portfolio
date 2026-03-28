@@ -34,7 +34,7 @@ function Contact() {
               src={vivit}
               alt="Vivit"
               className="img-fluid "
-              style={{ maxHeight: "400px" }}
+              style={{ maxHeight: "400px"}}
             />
           </div>
 
