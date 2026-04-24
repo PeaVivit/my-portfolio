@@ -49,31 +49,118 @@ const ExperienceCard = ({
 );
 
 // --- Reusable ProjectCard Component ---
-const ProjectCard = ({ title, description, tech, demoUrl }) => (
-  <div className="card mb-3 border-secondary" data-aos="fade-up">
-    <div className="card-body">
-      <h4 className="card-title">{title}</h4>
-      <p className="card-text">{description}</p>
-      <div className="d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
-        <p className="mb-2 mb-md-0 text-center ">
-          <strong>Tech Stack:</strong> {tech}
-        </p>
-        {demoUrl && (
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-outline-primary"
-          >
-            🔗 Live Demo
-          </a>
-        )}
+// const ProjectCard = ({ title, description, tech, demoUrl }) => (
+//   <div className="card mb-3 border-secondary" data-aos="fade-up">
+//     <div className="card-body">
+//       <h4 className="card-title">{title}</h4>
+//       <p className="card-text">{description}</p>
+//       <div className="d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+//         <p className="mb-2 mb-md-0 text-center ">
+//           <strong>Tech Stack:</strong> {tech}
+//         </p>
+//         {demoUrl && (
+//           <a
+//             href={demoUrl}
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="btn btn-outline-primary"
+//           >
+//             🔗 Live Demo
+//           </a>
+//         )}
+//       </div>
+//     </div>
+//   </div>
+// );
+const ProjectCard = ({
+  title,
+  description,
+  tech,
+  patientUrl,
+  staffUrl,
+  githubUrl,
+}) => (
+  <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+    <div
+      className="card mb-4 border-0 shadow-lg"
+      data-aos="fade-up"
+      style={{
+        borderRadius: "16px",
+        transition: "all 0.3s ease",
+      }}
+    >
+      <div className="card-body p-4">
+        {/* HEADER */}
+        <div className="d-flex justify-content-between align-items-start mb-2 flex-wrap">
+          <h4 className="fw-bold mb-0">
+            {title}
+            <span className="badge bg-success ms-2">🔥 Featured</span>
+          </h4>
+        </div>
+
+        {/* REALTIME BADGE */}
+        <span className="badge bg-info text-dark mb-2">⚡ Real-time</span>
+
+        {/* DESCRIPTION */}
+        <p className="text-muted">{description}</p>
+
+        {/* TECH TAG */}
+        <div className="mb-3">
+          {Array.isArray(tech)
+            ? tech.map((t, i) => (
+                <span
+                  key={i}
+                  className="badge bg-light text-dark border me-2 mb-1"
+                >
+                  {t}
+                </span>
+              ))
+            : tech}
+        </div>
+
+        {/* BUTTONS */}
+        <div className="d-flex flex-wrap gap-2 justify-content-between align-items-center">
+          <div className="d-flex gap-2">
+            {patientUrl && (
+              <a
+                href={patientUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-primary"
+              >
+                🧾 Live Demo
+              </a>
+            )}
+
+            {staffUrl && (
+              <a
+                href={staffUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-success"
+              >
+                👨‍⚕️ Staff
+              </a>
+            )}
+          </div>
+
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-dark"
+            >
+              💻 Code
+            </a>
+          )}
+        </div>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 // --- Main Component ---
-function Experience() {
+function ExperienceAndProject() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -127,8 +214,27 @@ function Experience() {
       title: "🌐 Country Explorer",
       description:
         "Explore countries with dynamic search, 3D flip cards, and dark mode.",
-      tech: "React, Tailwind CSS, Framer Motion, REST API",
-      demoUrl:"https://country-app-nu-blond.vercel.app/",
+      tech: ["React", "Tailwind CSS", "Framer Motion", "REST API"],
+      patientUrl: "https://country-app-nu-blond.vercel.app/",
+    },
+
+    {
+      title: "🏥 Real-Time Patient Monitoring System",
+      description:
+        "A real-time patient registration system where staff can monitor patient input live using WebSocket. Built with modern full-stack architecture and optimized with debouncing for performance.",
+      tech: [
+        "Next.js",
+        "Socket.io",
+        "Tailwind CSS",
+        "React Hook Form",
+        "Node.js",
+      ],
+
+      patientUrl: "https://real-time-patient-input-form-and-st.vercel.app/",
+      staffUrl: "https://real-time-patient-input-form-and-st.vercel.app/staff",
+
+      githubUrl:
+        "https://github.com/PeaVivit/real-time-patient-input-form-and-staff",
     },
   ];
 
@@ -199,7 +305,9 @@ function Experience() {
             title={proj.title}
             description={proj.description}
             tech={proj.tech}
-            demoUrl={proj.demoUrl}
+            patientUrl={proj.patientUrl}
+            staffUrl={proj.staffUrl}
+            githubUrl={proj.githubUrl}
           />
         ))}
       </motion.div>
@@ -207,4 +315,4 @@ function Experience() {
   );
 }
 
-export default Experience;
+export default ExperienceAndProject;
