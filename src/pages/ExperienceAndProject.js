@@ -94,12 +94,12 @@ const ProjectCard = ({
         <div className="d-flex justify-content-between align-items-start mb-2 flex-wrap">
           <h4 className="fw-bold mb-0">
             {title}
-            <span className="badge bg-success ms-2">🔥 Featured</span>
+            {/* <span className="badge bg-success ms-2">🔥 Featured</span> */}
           </h4>
         </div>
 
         {/* REALTIME BADGE */}
-        <span className="badge bg-info text-dark mb-2">⚡ Real-time</span>
+        {/* <span className="badge bg-info text-dark mb-2">⚡ Real-time</span> */}
 
         {/* DESCRIPTION */}
         <p className="text-muted">{description}</p>
@@ -143,17 +143,6 @@ const ProjectCard = ({
               </a>
             )}
           </div>
-
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-dark"
-            >
-              💻 Code
-            </a>
-          )}
         </div>
       </div>
     </div>
